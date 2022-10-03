@@ -2,17 +2,15 @@ import Card from "../ui/Card";
 import classes from './NewMeetupForm.module.css';
 import { useRef } from 'react';
 
-function NewMeetupForm (props){
-
+const NewMeetupForm = (props) => {
     const titleInputRef = useRef(); //hooks
     const imageInputRef = useRef();
     const addressInputRef = useRef();
     const descInputRef = useRef();
 
 
-    function submitHandler(event){
+    const submitHandler = (event) => {
         event.preventDefault();
-
         const enteredTitle = titleInputRef.current.value;
         const enteredImage = imageInputRef.current.value;
         const enteredAddress = addressInputRef.current.value;
@@ -26,8 +24,7 @@ function NewMeetupForm (props){
         }
 
         props.onAddMeetup(DATAFORM);
-    }
-
+    };
 
     return (
         <Card>
@@ -53,7 +50,7 @@ function NewMeetupForm (props){
                 </div>
             </form>
         </Card>
-    )
+    );
 };
 
 export default NewMeetupForm;

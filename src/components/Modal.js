@@ -1,13 +1,10 @@
-
-function Modal(props) {
-
-    function cancelHandler(){
+const Modal = (props) => {
+    const cancelHandler = () => {
         props.onCancel();
-    }
-
-    function confirmHandler(){
+    };
+    const confirmHandler = () => {
         props.onConfirm();
-    }
+    };
 
     return (
         <div className="modal">

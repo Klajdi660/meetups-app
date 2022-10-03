@@ -2,10 +2,10 @@ import { useContext } from 'react';
 import FavoritesContext from '../store/favorites-context';
 import MeetupList from '../components/meetups/MeetupList';
 
-function Favorites() {
+const Favorites = () => {
     const favoritesCtx = useContext(FavoritesContext);
-
     let content;
+
     if(favoritesCtx.totalFavorites === 0){
         content = <p> You got no favorites yet. Start adding some meetups</p>
     } else {
@@ -15,8 +15,8 @@ function Favorites() {
         <section>
             <h1> My Favorites </h1>
             {content}
-         </section>
+        </section>
     );
-}
+};
 
 export default Favorites;

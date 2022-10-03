@@ -5,15 +5,11 @@ import FavoritesContext from '../../store/favorites-context';
 import firebasE from '../../config';
 
 
-
-function MeetupItem(props){
-
+const MeetupItem = (props) => {
     const favoritesCtx = useContext(FavoritesContext);
     const itemIsFavorite = favoritesCtx.itemsIsFavorite(props.id);
 
-    console.log("image",props.image)
-
-    function toogleFavoriteStatusHandler(){
+    const toogleFavoriteStatusHandler = () => {
         if(itemIsFavorite){
             favoritesCtx.removeFavorite(props.id)
         } else {
@@ -25,20 +21,15 @@ function MeetupItem(props){
                 description: props.description
             });
         }
-        console.log(itemIsFavorite)
-    }
+    };
 
-    function remove(id) {
-        
-        console.log(id)
-
+    const remove = (id) => {
         firebasE.database().ref(`meetup/${id}`).remove();
         setTimeout(() => {
             window.location.reload();
 
-        },1000)
-
-    }
+        },1000);
+    };
 
     return (
         <li className={classes.item} style={{listStyle: 'none'}}>
