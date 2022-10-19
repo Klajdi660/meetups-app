@@ -4,7 +4,6 @@ import classes from './MeetupItem.module.css';
 import FavoritesContext from '../../store/favorites-context';
 import firebasE from '../../config';
 
-
 const MeetupItem = (props) => {
     const favoritesCtx = useContext(FavoritesContext);
     const itemIsFavorite = favoritesCtx.itemsIsFavorite(props.id);
@@ -27,7 +26,6 @@ const MeetupItem = (props) => {
         firebasE.database().ref(`meetup/${id}`).remove();
         setTimeout(() => {
             window.location.reload();
-
         },1000);
     };
 
@@ -45,9 +43,7 @@ const MeetupItem = (props) => {
                 <div className={classes.actions}>
                     <button onClick={toogleFavoriteStatusHandler}> {itemIsFavorite ? 'Remove from Favorites' : 'Add to Favorites'}</button>
                     <button style={{marginLeft: 100}} onClick={()=>remove(props.id)}> Delete meetup </button>
-
                 </div>
-
             </Card>
         </li>
     );

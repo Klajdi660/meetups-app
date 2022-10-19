@@ -21,7 +21,9 @@ const MainNavigation = () => {
                         <Link to="/new-meetup">Add new meetup <RiPlayListAddFill /> </Link>
                     </li>
                     <li>
-                        <Link to="/favorites">My favorites  <MdFavoriteBorder /> <span className={classes.badge}>{favoritesCtx.totalFavorites}</span></Link>
+                        <Link to="/favorites">My favorites  <MdFavoriteBorder /> 
+                            <span className={classes.badge}>{favoritesCtx.totalFavorites}</span>
+                        </Link>
                     </li>
                 </ul>
             </nav>

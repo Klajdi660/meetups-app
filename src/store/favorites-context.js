@@ -16,13 +16,11 @@ export const FavoritesContextProvider = (props) => {
            return prevFavorite.concat(favoriteMeetup);
         });
     };
-
     const removeFavoriteHandler = (meetupId) => {
         setFavorites((prevFavorite) => {
             return prevFavorite.filter(meetup => meetup.id !== meetupId);
         })
     };
-
     const itemIsFavoriteHandler = (meetupId) => {
         return favorites.some(meetup => meetup.id === meetupId);
     };
