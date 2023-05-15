@@ -8,7 +8,7 @@ const AllMeetup = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      'https://meetups-app-9b46d-default-rtdb.firebaseio.com/meetups.json'
+      'https://meetups-1065f-default-rtdb.firebaseio.com/meetups.json'
     )
     .then((response) => {
       return response.json();

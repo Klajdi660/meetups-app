@@ -2,13 +2,13 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 
 const config = {
-    apiKey: "AIzaSyCFR-WuFEyMccAUzZ94DESUt1kkaLrZa1g",
-    authDomain: "meetups-app-9b46d.firebaseapp.com",
-    databaseURL: "https://meetups-app-9b46d-default-rtdb.firebaseio.com",
-    projectId: "meetups-app-9b46d",
-    storageBucket: "meetups-app-9b46d.appspot.com",
-    messagingSenderId: "204280321745",
-    appId: "1:204280321745:web:4261608dc8120745e4d7f0"
+    apiKey: "AIzaSyBQ3DLBk_-n0c0cC0r88ALBg1EX1fw5A0M",
+    authDomain: "meetups-1065f.firebaseapp.com",
+    databaseURL: "https://meetups-1065f-default-rtdb.firebaseio.com",
+    projectId: "meetups-1065f",
+    storageBucket: "meetups-1065f.appspot.com",
+    messagingSenderId: "328396110395",
+    appId: "1:328396110395:web:63a5800dd3f9303bc83a1e"
 };
 
 const firebasE = firebase.initializeApp(config);

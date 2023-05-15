@@ -5,7 +5,7 @@ const NewMeetup = () => {
     const history = useHistory();
 
     const addMeetupHandler = (DATAFORM) => {
-        fetch('https://meetups-app-9b46d-default-rtdb.firebaseio.com/meetups.json',
+        fetch('https://meetups-1065f-default-rtdb.firebaseio.com/meetups.json',
         {
             method: 'POST',
             body: JSON.stringify(DATAFORM),
