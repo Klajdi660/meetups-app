@@ -1,6 +1,6 @@
+import { useRef } from "react";
 import Card from "../ui/Card";
-import classes from './NewMeetupForm.module.css';
-import { useRef } from 'react';
+import classes from "./NewMeetupForm.module.css";
 
 const NewMeetupForm = (props) => {
     const titleInputRef = useRef(); //hooks
@@ -16,14 +16,14 @@ const NewMeetupForm = (props) => {
         const enteredAddress = addressInputRef.current.value;
         const enteredDesc = descInputRef.current.value;
 
-        const DATAFORM = {
+        const data = {
             title: enteredTitle,
             image: enteredImage,
             address: enteredAddress,
             description: enteredDesc
         }
 
-        props.onAddMeetup(DATAFORM);
+        props.onAddMeetup(data);
     };
 
     return (

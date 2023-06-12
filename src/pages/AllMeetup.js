@@ -25,24 +25,28 @@ const AllMeetup = () => {
       };
       setLoading(false);
       setLoadedMeetup(meetups);
+    })
+    .catch((error) => {
+      console.error(error)
     });
   }, []);
 
-  if(loading){
-    return (
-      <section>
-        <p>Loading...</p>
-      </section>
-    );
-  };
-  
   return (
-    <section>
-      <h1>All Meetups</h1>
-      <ul>
-        <MeetupList meetups={loadedMeetup} />
-      </ul>  
-    </section>
+    <>
+      {loading ? (
+        <section>
+          <p>Loading...</p>
+        </section>
+        ) : (
+          <section>
+            <h1>All Meetups</h1>
+            <ul>
+              <MeetupList meetups={loadedMeetup}/>
+            </ul>
+          </section>
+        )
+      }
+    </>
   );
 };
 

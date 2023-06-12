@@ -1,23 +1,24 @@
-import Card from '../ui/Card';
-import { useContext } from 'react';
-import classes from './MeetupItem.module.css';
-import FavoritesContext from '../../store/favorites-context';
-import firebasE from '../../config';
+import { useContext } from "react";
+import FavoritesContext from "../../store/favorites-context";
+import firebasE from "../../config";
+import Card from "../ui/Card";
+import classes from "./MeetupItem.module.css";
 
 const MeetupItem = (props) => {
+    const { id, image, title, address, description } = props;
     const favoritesCtx = useContext(FavoritesContext);
-    const itemIsFavorite = favoritesCtx.itemsIsFavorite(props.id);
+    const itemIsFavorite = favoritesCtx.itemsIsFavorite(id);
 
     const toogleFavoriteStatusHandler = () => {
         if(itemIsFavorite){
-            favoritesCtx.removeFavorite(props.id)
+            favoritesCtx.removeFavorite(id)
         } else {
             favoritesCtx.addFavorite({
-                id: props.id,
-                image: props.image,
-                title: props.title,
-                address: props.address, 
-                description: props.description
+                id: id,
+                image: image,
+                title: title,
+                address: address, 
+                description: description
             });
         }
     };
